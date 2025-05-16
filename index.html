@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portafolio Personal - Camilo Ojeda</title>
+<!-- Font Awesome for icons -->
+<link
+  href="https://github.com/camiloojeda123/camiloojeda123.github.io.git"
+  rel="stylesheet"
+/>
+<style>
+  /* Color palette: shades of green */
+  :root {
+    --green-dark: #05472a;
+    --green-medium: #107a3f;
+    --green-light: #4caf50;
+    --green-lighter: #a8d5a3;
+    --green-accent: #2ecc71;
+    --white: #ffffff;
+    --gray-light: #f7faf7;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gray-light);
+    color: var(--green-dark);
+  }
+
+  header {
+    background-color: var(--green-dark);
+    color: var(--white);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  nav .logo img {
+    width: 40px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: var(--green-accent);
+  }
+
+  main {
+    max-width: 900px;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+  }
+
+  section {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--green-lighter);
+  }
+
+  h1,
+  h2 {
+    color: var(--green-dark);
+    margin-bottom: 1rem;
+  }
+
+  .inicio {
+    text-align: center;
+  }
+
+  .inicio h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .inicio p {
+    font-size: 1.2rem;
+    color: var(--green-medium);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .projects-list,
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .project,
+  .experience-item {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.07);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .project:hover,
+  .experience-item:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  }
+
+  .project-image,
+  .experience-image {
+    width: 140px;
+    height: 100px;
+    background-color: var(--green-lighter);
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .project-content,
+  .experience-content {
+    flex: 1;
+  }
+
+  .project-title,
+  .experience-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--green-dark);
+  }
+
+  .project-description,
+  .experience-description {
+    color: var(--green-medium);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .experience-date {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--green-accent);
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    color: var(--green-medium);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--green-lighter);
+    background-color: var(--white);
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .projects-list,
+    .experience-list {
+      gap: 1rem;
+    }
+
+    .project,
+    .experience-item {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-image,
+    .experience-image {
+      width: 100%;
+      height: 180px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lamborghini_Logo.svg/2560px-Lamborghini_Logo.svg.png" alt="Lamborghini" title="Camilo Ojeda" />
+        Camilo Ojeda
+      </div>
+      <ul>
+        <li><a href="#inicio" class="active"><i class="fa-solid fa-house"></i>Inicio</a></li>
+        <li><a href="#proyecto"><i class="fa-solid fa-lightbulb"></i>Proyecto</a></li>
+        <li><a href="#experiencia-academica"><i class="fa-solid fa-graduation-cap"></i>Experiencia Académica</a></li>
+        <li><a href="#experiencia-personal"><i class="fa-solid fa-briefcase"></i>Experiencia Personal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="inicio">
+      <h1><i class="fa-solid fa-user"></i> Hola, soy Camilo Ojeda</h1>
+      <p>Desarrollador apasionado por crear soluciones web modernas, eficientes y adaptables. Bienvenido a mi portafolio personal.</p>
+    </section>
+
+    <section id="proyecto">
+      <h2><i class="fa-solid fa-diagram-project"></i> Proyectos</h2>
+      <div class="projects-list">
+        <article class="project">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=140&q=80"
+            alt="Proyecto 1"
+            class="project-image"
+          />
+          <div class="project-content">
+            <div class="project-title"><i class="fa-solid fa-code"></i> Proyecto 1: Aplicación Web</div>
+            <div class="project-description">Desarrollo de una aplicación web para gestión de tareas con tecnologías actuales y experiencia de usuario optimizada.</div>
+          </div>
+        </article>
+        <article class="project">
+          <img
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=140&q=80"
+            alt="Proyecto 2"
+            class="project-image"
+          />
+          <div class="project-content">
+            <div class="project-title"><i class="fa-solid fa-cart-shopping"></i> Proyecto 2: Sitio E-Commerce</div>
+            <div class="project-description">Creación de tienda en línea con integración de pasarela de pago y diseño responsive para móviles.</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experiencia-academica">
+      <h2><i class="fa-solid fa-mortar-board"></i> Experiencia Académica</h2>
+      <div class="experience-list">
+        <article class="experience-item">
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=140&q=80"
+            alt="Universidad"
+            class="experience-image"
+          />
+          <div class="experience-content">
+            <div class="experience-title"><i class="fa-solid fa-school"></i> Licenciatura en Ciencias de la Computación</div>
+            <div class="experience-description">Universidad XYZ - Formación en programación, algoritmos y desarrollo de software.</div>
+            <div class="experience-date">2015 - 2019</div>
+          </div>
+        </article>
+        <article class="experience-item">
+          <img
+            src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=140&q=80"
+            alt="Curso"
+            class="experience-image"
+          />
+          <div class="experience-content">
+            <div class="experience-title"><i class="fa-solid fa-laptop-code"></i> Curso de Desarrollo Web Full Stack</div>
+            <div class="experience-description">Institución ABC - Aprendizaje intensivo de tecnologías frontend y backend.</div>
+            <div class="experience-date">2020</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experiencia-personal">
+      <h2><i class="fa-solid fa-briefcase"></i> Experiencia Personal</h2>
+      <div class="experience-list">
+        <article class="experience-item">
+          <img
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=140&q=80"
+            alt="Freelance"
+            class="experience-image"
+          />
+          <div class="experience-content">
+            <div class="experience-title"><i class="fa-solid fa-user-tie"></i> Desarrollador Freelance</div>
+            <div class="experience-description">Creación y mantenimiento de sitios web para clientes pequeños, aplicando metodologías ágiles.</div>
+            <div class="experience-date">2019 - Presente</div>
+          </div>
+        </article>
+        <article class="experience-item">
+          <img
+            src="https://images.unsplash.com/photo-1532614338840-ab30cf10edb5?auto=format&fit=crop&w=140&q=80"
+            alt="Prácticas"
+            class="experience-image"
+          />
+          <div class="experience-content">
+            <div class="experience-title"><i class="fa-solid fa-handshake"></i> Prácticas Profesionales</div>
+            <div class="experience-description">Empresa Tech - Desarrollo y soporte de aplicaciones internas, participación en equipos multidisciplinarios.</div>
+            <div class="experience-date">2018</div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Camilo Ojeda. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - document.querySelector('header').offsetHeight,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
